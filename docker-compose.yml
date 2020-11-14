@@ -11,8 +11,11 @@ services:
     depends_on:
       - db
     environment: 
-      - SECRET_KEY=p_o3up1rg5)t^lxm9-43%0)s-=1ejrn%o7xjd+e4#*!t+_ev82
-      - DEBUG=1
+      - SECRET_KEY="${SECRET_KEY}"
+      - DEBUG="${DEBUG}"
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_NAME=${DATABASE_NAME}
   db:
     image: postgres:11
     volumes:
