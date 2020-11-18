@@ -11,6 +11,7 @@ psycopg2-binary = "==2.8.6"
 django-crispy-forms = "==1.9.1"
 django-allauth = "==0.43.0"
 environs = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.8"

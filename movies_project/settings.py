@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # Third-party
+    'debug_toolbar',
     'crispy_forms',
     'allauth',
     'allauth.account',
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -166,3 +168,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 DEFAULT_FROM_EMAIL = 'admin@djangomovierentals.com'
+
+import socket
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
