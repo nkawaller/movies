@@ -11,9 +11,9 @@ services:
     depends_on:
       - db
     environment: 
-      - ENVIRONMENT=development
+      - ENVIRONMENT=production
       - SECRET_KEY="${SECRET_KEY}"
-      - DEBUG="${DEBUG}"
+      - DEBUG=0
       - DATABASE_USER=${DATABASE_USER}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_NAME=${DATABASE_NAME}
